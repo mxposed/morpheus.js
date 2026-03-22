@@ -25609,16 +25609,16 @@ morpheus.HeatMapElementCanvas.prototype = {
                   cellRowSize -= 2;
                   cellColumnSize -= 2;
                 }
-                var x = px + xoffset + cellRowSize / 2;
-                var y = py + yoffset + cellColumnSize / 2;
+                var x = px + xoffset + cellColumnSize / 2;
+                var y = py + yoffset + cellRowSize / 2;
                 morpheus.CanvasUtil.drawShape(context, condition.shape,
                   x, y, Math.min(cellColumnSize, cellRowSize) / 2, true);
               } else { // e.g. filled circle on top of heat map
                 drawFunction(px + xoffset, py + yoffset, cellColumnSize,
                   cellRowSize);
                 // x and y are at center
-                var x = px + xoffset + cellRowSize / 2;
-                var y = py + yoffset + cellColumnSize / 2;
+                var x = px + xoffset + cellColumnSize / 2;
+                var y = py + yoffset + cellRowSize / 2;
                 context.fillStyle = condition.color;
                 morpheus.CanvasUtil.drawShape(context, condition.shape,
                   x, y, Math.min(cellColumnSize, cellRowSize) / 4, true);
@@ -32737,14 +32737,6 @@ morpheus.HeatMap.prototype = {
       var track = this.rowTracks[i];
       if (track.isVisible()) {
         trackPixels += track.getUnscaledWidth();
-      }
-    }
-    for (var i = 0, length = this.columnTracks.length; i < length; i++) {
-      var track = this.columnTracks[i];
-      if (track.isVisible()) { // all column track headers have the
-        // same width
-        trackPixels += this.columnTrackHeaders[i].getUnscaledWidth();
-        break;
       }
     }
 
