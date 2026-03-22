@@ -1,5 +1,6 @@
 # Morpheus.js
 
+**Note**: original repository seems to be without action so far, so this is my fork with 2 fixes (in `dev` branch).
 
 Versatile matrix visualization and analysis software
 
