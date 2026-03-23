@@ -261,6 +261,10 @@ morpheus.Util.getFileName = function (fileOrUrl) {
       name = name.substring(slash + 1); // get stuff after slash
     }
   }
+  question = name.indexOf('?');
+  if (question !== -1) {
+    name = name.substring(0, question);
+  }
   return name;
 };
 morpheus.Util.prefixWithZero = function (value) {
